@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the comments for the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Comment>
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
